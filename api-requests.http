@@ -1,5 +1,5 @@
 ### POST all filters
-POST localhost:8081/
+POST localhost:8081/habi/properties
 Content-Type: application/json
 
 {
@@ -11,17 +11,19 @@ Content-Type: application/json
 }
 
 ### POST one filter
-POST localhost:8081/
+POST localhost:8081/habi/properties
 Content-Type: application/json
 
 {
   "filters": {
-    "city": "bogota"
+    "city": "pereira",
+    "status": "pre_venta",
+    "year": 2020
   }
 }
 
 ### POST without filters
-POST localhost:8081/
+POST localhost:8081/habi/properties
 Content-Type: application/json
 
 {

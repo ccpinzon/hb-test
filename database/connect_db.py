@@ -1,15 +1,13 @@
 # from getpass import getpass
+import json
+
 from mysql.connector import connect, Error
 
 
 def conn_db():
     try:
         db_connection = connect(
-            host="",
-            port="3309",
-            user="pruebas",
-            passwd="",
-            database="habi_db"
+
         )
         print(f"DATABASE ===> ", db_connection)
         return db_connection
@@ -26,8 +24,25 @@ def exec_query_sql(sql):
     cursor = db_conn.cursor()
 
     cursor.execute(sql)
+    # column_names = json.loads(json.dumps(cursor.column_names))
+    # print(f' columns -> ', column_names)
 
     data = cursor.fetchall()
 
-    return data
+    json_data = json.loads(json.dumps(data))
+    list_data = []
+    obj_data = {}
 
+    for obj in json_data:
+        # obj_data.update(id=obj[0])
+        obj_data.update(address=obj[1])
+        obj_data.update(city=obj[2])
+        obj_data.update(status=obj[3])
+        obj_data.update(price=obj[4])
+        obj_data.update(description=obj[5])
+        list_data.append(obj_data)
+        obj_data = {}
+
+    result = {}
+    result.update(data=list_data)
+    return result
