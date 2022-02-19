@@ -1,0 +1,6 @@
+### POST Example
+POST localhost:8080/?imsi=Hello
+
+
+### GET Example
+GET localhost:8080/?test=prueba
