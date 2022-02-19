@@ -1,13 +1,17 @@
 import http.server
 import socketserver
 import json
+from urllib.parse import urlparse, parse_qs
 
-PORT = 8080
+PORT = 8081
 
 
 class RestAPI(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self) -> None:
+
+        query_components = parse_qs(urlparse(self.path).query)
+        print(f'queryParams ==> ', query_components)
         self.send_response(200)
         self.send_header('Content-type', 'text/json')
         self.end_headers()
@@ -17,7 +21,7 @@ class RestAPI(http.server.SimpleHTTPRequestHandler):
 
         self.wfile.write(output_json.encode('utf-8'))
 
-    def do_POST(self):
+    def do_POST(self) -> None:
         # - request -
 
         content_length = int(self.headers['Content-Length'])
@@ -29,7 +33,7 @@ class RestAPI(http.server.SimpleHTTPRequestHandler):
         else:
             input_data = None
 
-        print(f'input_data => ', input_data)
+        print(f'body json => ', input_data)
 
         # - response -
 

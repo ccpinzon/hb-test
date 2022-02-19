@@ -1,6 +1,29 @@
-### POST Example
-POST localhost:8080/?imsi=Hello
+### POST all filters
+POST localhost:8081/
+Content-Type: application/json
 
+{
+  "filters": {
+    "city": "medellin",
+    "year": 2011,
+    "status": "vendido"
+  }
+}
 
-### GET Example
-GET localhost:8080/?test=prueba
+### POST one filter
+POST localhost:8081/
+Content-Type: application/json
+
+{
+  "filters": {
+    "city": "bogota"
+  }
+}
+
+### POST without filters
+POST localhost:8081/
+Content-Type: application/json
+
+{
+  "filters": {}
+}
