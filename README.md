@@ -48,9 +48,6 @@ el archivo `database/connect_db.py` en la funcion `conn_db` como la siguiente:
 ### Ejemplos de requests:
 - Todos los filtros
 ```json
-POST localhost:8081/habi
-Content-Type: application/json
-
 {
   "filters": {
     "city": "pereira",
@@ -62,9 +59,6 @@ Content-Type: application/json
 
 - Un filtro
 ```json
-POST localhost:8081/habi
-Content-Type: application/json
-
 {
   "filters": {
     "year": 2020
@@ -74,9 +68,6 @@ Content-Type: application/json
 
 - Todas las propiedades [Sin Filtros]
 ```json
-POST localhost:8081/habi
-Content-Type: application/json
-
 {
   "filters": {
   }
