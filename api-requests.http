@@ -1,17 +1,6 @@
-### POST all filters
-POST localhost:8081/habi/properties
-Content-Type: application/json
 
-{
-  "filters": {
-    "city": "medellin",
-    "year": 2011,
-    "status": "vendido"
-  }
-}
-
-### POST one filter
-POST localhost:8081/habi/properties
+### POST all filter
+POST localhost:8081/habi
 Content-Type: application/json
 
 {
@@ -22,10 +11,27 @@ Content-Type: application/json
   }
 }
 
-### POST without filters
-POST localhost:8081/habi/properties
+### POST year + city
+POST localhost:8081/habi
 Content-Type: application/json
 
 {
-  "filters": {}
+  "filters": {
+    "year": 2020,
+    "city": "pereira"
+  }
 }
+
+### POST year
+POST localhost:8081/habi
+Content-Type: application/json
+
+{
+  "filters": {
+    "year": 2020
+  }
+}
+
+### POST without filters
+POST localhost:8081/habi/
+Content-Type: application/json

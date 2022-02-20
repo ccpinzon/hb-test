@@ -36,7 +36,7 @@ class RestAPI(http.server.SimpleHTTPRequestHandler):
 
         print(f'payload json => ', input_data)
 
-        if not self.path != '/habi/properties':
+        if not self.path != '/habi' or not self.path != '/habi/':
             output_data = habi_services.get_habi_property_list(input_data)
 
         # - response -
