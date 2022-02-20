@@ -1,7 +1,7 @@
 # habi-test
 
 - Tecnologias Utilizadas -> `Python 3.9`
-
+### Dudas
 1. Crear una API Rest sin framework para el microservicio de consulta de inmuebles.
    1. Si la api no tiene ningun query de filtro, debe retornar todos los inmuebles con los estados “pre_venta”, “en_venta” y
 “vendido”
@@ -10,7 +10,7 @@
 3. Al no poder usar un ORM:  crear la conexion y filtrado directamente. 
 4. Usar TDD para cada metodo/funcion.
 
-### Como ejecutar? 
+## Como ejecutar? 
 
 1. Agregar los datos faltantes de la conexion en 
 el archivo `database/connect_db.py` en la funcion `conn_db` como la siguiente:
@@ -47,7 +47,7 @@ el archivo `database/connect_db.py` en la funcion `conn_db` como la siguiente:
 
 ### Ejemplos de requests:
 - Todos los filtros
-```curl
+```json
 POST localhost:8081/habi
 Content-Type: application/json
 
@@ -61,7 +61,7 @@ Content-Type: application/json
 ```
 
 - Un filtro
-```curl
+```json
 POST localhost:8081/habi
 Content-Type: application/json
 
@@ -73,7 +73,7 @@ Content-Type: application/json
 ```
 
 - Todas las propiedades [Sin Filtros]
-```curl
+```json
 POST localhost:8081/habi
 Content-Type: application/json
 
