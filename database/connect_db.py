@@ -7,10 +7,10 @@ from mysql.connector import connect, Error
 def conn_db():
     try:
         db_connection = connect(
-            host="localhost",
+            host="3.130.126.210",
             port="3309",
             user="pruebas",
-            passwd="",
+            passwd="VGbt3Day5R",
             database="habi_db"
         )
         print(f"DATABASE ===> ", db_connection)
